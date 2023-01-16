@@ -35,6 +35,7 @@ services:
       DB_USER: ${POSTGRES_USER}
       DB_PASSWORD: ${POSTGRES_PASSWORD}
       DB_NAME: ${POSTGRES_DB}
+      SECRET: ${SECRET}
     depends_on:
       - postgres
 

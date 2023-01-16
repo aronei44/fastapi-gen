@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from config.database import Base, engine
+from routes import authRoute
 
 app = FastAPI()
 
@@ -19,3 +20,5 @@ async def root():
     return {
         "message": "ok"
     }
+
+app.include_router(authRoute.router, prefix="/api/auth", tags=["Authentication"])
