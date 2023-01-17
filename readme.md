@@ -42,3 +42,7 @@ available commands:
 - ```make:route nameRoute```            : for generating basic route
 
 - ```help```                            : for hints
+
+## Collaboration
+
+help me to make this fastapi base project bigger by fork, change code and create merge request
