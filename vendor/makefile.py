@@ -34,3 +34,29 @@ class Register(BaseModel):
             f.close()
         except Exception as e:
             print(e)
+
+
+    def route(self):
+        try:
+            namefile = 'routes/' + self.name + 'Route.py'
+            f = open(namefile, 'x')
+            f.write("""from fastapi import APIRouter, Body, Depends
+from sqlalchemy.orm import Session
+from config.session import get_session
+
+
+router = APIRouter()
+
+@router.get('/', status_code=200)
+async def main():
+    return 'ok'""")
+            f.close()
+
+            f = open('main.py', 'a')
+            f.write("""
+from routes import {0}Route
+app.include_router({0}Route.router, prefix="/api/{0}", tags=["{0}"])
+""".format(self.name))
+            f.close()
+        except Exception as e:
+            print(e)

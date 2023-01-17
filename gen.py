@@ -17,7 +17,7 @@ class Generator:
         elif command == 'model':
             makefile.model()
         elif command == 'route':
-            pass
+            makefile.route()
         else: 
             raise ValueError("Undefined command. check 'py gen.py help' for hints.")
 
