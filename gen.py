@@ -15,7 +15,7 @@ class Generator:
         if command == 'controller':
             makefile.controller()
         elif command == 'model':
-            pass
+            makefile.model()
         elif command == 'route':
             pass
         else: 
