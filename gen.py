@@ -1,5 +1,6 @@
 import sys
 import asyncio
+from vendor.makefile import MakeFile
 
 class Generator:
     def __init__(self, args):
@@ -10,8 +11,9 @@ class Generator:
             raise ValueError("Must give at least 1 argument. check 'py gen.py help' for hints.")
     
     async def make_file(self, command, name):
+        makefile = MakeFile(name=name)
         if command == 'controller':
-            pass
+            makefile.controller()
         elif command == 'model':
             pass
         elif command == 'route':
