@@ -36,6 +36,7 @@ services:
       DB_PASSWORD: ${POSTGRES_PASSWORD}
       DB_NAME: ${POSTGRES_DB}
       SECRET: ${SECRET}
+      SQLALCHEMY_SILENCE_UBER_WARNING: 1
     depends_on:
       - postgres
 
